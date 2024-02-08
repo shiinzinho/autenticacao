@@ -18,8 +18,6 @@ class SetSanctumGuard
     {
         if(Str::startsWith($request->getRequestUri(), 'api/admin')){
             config(['sanctum.guard' => 'admins']);
-        } else {
-            return "sem guard";
         }
         return $next($request);
     }
